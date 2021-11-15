@@ -38,18 +38,18 @@ module.exports = {
         filename: `bundle[name].js`
     },
 
-  //   optimization: {
-	// 	splitChunks: {
-	// 		cacheGroups: {
-	// 			vendor: {
-	// 				name: 'vendors',
-	// 				test: /[\\/]node_modules[\\/]/,
-	// 				chunks: 'all',
-	// 				enforce: true
-	// 			}
-	// 		}
-	// 	}
-	// },
+  optimization: {
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					name: 'vendors',
+					test: /[\\/]node_modules[\\/]/,
+					chunks: 'all',
+					enforce: true
+				}
+			}
+		}
+	},
 
     module: {
         rules: [
@@ -61,11 +61,9 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                       presets: [
-                        ['@babel/preset-env', {
-                          "targets": "defaults" 
-                        }],
                         '@babel/preset-react'
-                      ]
+                      ],
+                      "compact" : true
                     }
                 }]
             },

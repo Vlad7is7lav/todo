@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './sass/index.sass';
+import InputArea from './components/InputArea';
+import ListArea from './components/ListArea';
+import { useSelector } from 'react-redux';
+import { selectTodos } from './store/features/todoSlice';
+import { styled } from 'styled-components';
 
 function App() {
+  const todos = useSelector(selectTodos)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <InputArea></InputArea>
+      <ListArea/>
+    </>
   );
 }
 

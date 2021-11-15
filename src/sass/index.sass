@@ -1,0 +1,60 @@
+body 
+    font-family: 'Roboto', sans-serif
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+    .inputArea
+        margin-bottom: 20px
+
+    .listArea
+        padding: 10px 10px 10px 0
+        display: flex
+        flex-direction: column
+        .task
+            position: relative
+            display: flex
+            align-items: center
+            padding: 5px 0
+            
+            
+            .task-date
+                padding: 0 10px
+                background-color: #b4cacb
+                width: 70px
+                height: 100%
+                line-height: 30px
+            .task-name
+                width: 370px
+                padding: 5px 10px
+                cursor: pointer
+                user-select: none
+                border-bottom: 1px solid #8f9e9d
+                margin-left: 10px
+            .edit-true
+                cursor: default
+                user-select: text
+        .task-error_true
+            &::after
+                position: absolute
+                content: 'Your input is empty or task already exists'
+                top: -10px
+                left: 100px
+                background-color: rgba(254, 199, 200, 0.5)
+                padding: 3px
+                border-radius: 5px
+        
+        .task-completed_true
+            text-decoration: line-through
+            
+
+
+code 
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+#root 
+    position: relative
+    width: 600px
+    // width: fit-content
+    margin: auto
+
+
